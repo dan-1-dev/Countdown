@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contagem Regressiva até 29/05/2026</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 3em;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .expired {
+      color: #ff4444;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Faltam até 29 de maio de 2026:</h1>
+  <div class="timer" id="countdown">Carregando...</div>
+  <div class="expired" id="expiredMsg" style="display:none;">Já passou!</div>
+
+  <script>
+    const countdownElement = document.getElementById('countdown');
+    const expiredMsg = document.getElementById('expiredMsg');
+    
+    // Data alvo: 29 de maio de 2026 às 00:00
+    const targetDate = new Date('2026-05-29T00:00:00-03:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownElement.style.display = 'none';
+        expiredMsg.style.display = 'block';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
