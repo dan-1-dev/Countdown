@@ -1,73 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <p class="title">Contagem Regressiva PCCS</p>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contagem Regressiva para o novo PCCS</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .timer {
-      font-size: 2em;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-
-    .expired {
-      color: #ff4444;
-      font-size: 1.5em;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Regressiva PCCS</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <h1>Contagem Regressiva</h1>
-  <div class="timer" id="countdown">Carregando...</div>
-  <div class="expired" id="expiredMsg" style="display:none;">Já passou!</div>
+    <table>
+  <tr>
+    <td>
+<main class="countdown-container">
+         <div class="countdown-card dias">
+      <div class="tempo" id="dias">0</div>
+      <div class="rotulo">Dias</div>
+    </div>
+    <div class="countdown-card horas">
+      <div class="tempo" id="horas">0</div>
+      <div class="rotulo">Horas</div>
+    </div>
+    <div class="countdown-card minutos">
+      <div class="tempo" id="minutos">0</div>
+      <div class="rotulo">Minutos</div>
+    </div>
+    <div class="countdown-card segundos">
+      <div class="tempo" id="segundos">0</div>
+      <div class="rotulo">Segundos</div>
+    </div>
+                
+    </p>
+      
+  </main>
+    </td>
+    <td>
+       
+  <div class="animation-area">
+    <img id="walker" src="img/stickman.gif" alt="Boneco andando">
+    <div class="goal">🏆</div>
+  </div>
 
-  <script>
-    const countdownElement = document.getElementById('countdown');
-    const expiredMsg = document.getElementById('expiredMsg');
-    
-    // Data alvo: 29 de maio de 2026 às 00:00
-    const targetDate = new Date('2026-05-29T00:00:00-03:00').getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        countdownElement.style.display = 'none';
-        expiredMsg.style.display = 'block';
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownElement.textContent = `Faltam ${days} dias ${hours} horas ${minutes} minutos e ${seconds} segundos para o novo PCCS.`;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+    </td>
+  </tr>
+  
+</table>
+  
+  <script type="module" src="js/controller.js"></script>
 </body>
 </html>

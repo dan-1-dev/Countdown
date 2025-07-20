@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contagem Regressiva PCCS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .animation-area {
+      position: relative;
+      width: 365px;
+      height: 60px;
+      border-top: 2px solid #000;
+      margin: 40px auto;
+    }
+
+    #walker {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      transition: left 1s ease-out;
+    }
+
+    .goal {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 32px;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contagem Regressiva para o novo PCCS</h1>
+
+  <div class="animation-area">
+    <img id="walker" src="img/stickman.gif" alt="Boneco andando">
+    <div class="goal">🏆</div>
+  </div>
+
+  <div class="info" id="daysLeftDisplay"></div>
+
+  <script>
+    // Data alvo (30 de maio de 2026)
+    const targetDate = new Date("2026-05-30");
+    const today = new Date();
+
+    // Cálculo de diferença em dias
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const diffInMs = targetDate - today;
+    let daysLeft = Math.ceil(diffInMs / msPerDay);
+
+    // Limitar entre 0 e 365
+    daysLeft = Math.max(0, Math.min(365, daysLeft));
+
+    // Cálculo de posição (trajeto de 365px, 1px por dia)
+    const totalWidth = 365;
+    const currentPosition = totalWidth - daysLeft;
+
+    // Atualiza posição do boneco
+    const walker = document.getElementById("walker");
+    walker.style.left = `${currentPosition}px`;
+
+    // Atualiza texto de dias restantes
+    document.getElementById("daysLeftDisplay").textContent =
+      `Faltam ${daysLeft} dias para o novo PCCS.`;
+  </script>
+</body>
+</html>

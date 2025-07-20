@@ -1,0 +1,113 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom, #120037, #1f004e);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+} */
+
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5px;
+  padding: 20px;
+}
+
+.title {
+    font-size: 28px;
+  font-weight: bold;
+}
+
+
+.countdown-card {
+  background-color: #121e30;
+  border-radius: 16px;
+  padding: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.tempo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rotulo {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.dias .tempo {
+  color: #4eaaff;
+}
+
+.horas .tempo {
+  color: #3df59c;
+}
+
+.minutos .tempo {
+  color: #ffd93d;
+}
+
+.segundos .tempo {
+  color: #ff6464;
+}
+
+.colunas {
+  column-count: 2;
+  column-gap: 50px;
+  column-rule: 1px solid black;
+}
+.animation-area {
+      position: relative;
+      width: 365px;
+      height: 60px;
+      border-bottom: 2px solid #0d7b0b;
+      margin: 40px auto;
+    }
+
+    #walker {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      transition: left 1s ease-out;
+    }
+
+    .goal {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 32px;
+    }
+
+    .info {
+      margin-top: 50px;
+      font-size: 18px;
+    }
+/* .animation-area {
+  position: relative;
+  width: 365px;
+  margin: 0 auto;
+  border-bottom: 3px solid #136d32;
+}
+
+#walker {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: auto;
+  transition: left 1s linear;
+}
+
+.goal {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 2rem;
+} */
