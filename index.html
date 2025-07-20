@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contagem Regressiva até 29/05/2026</title>
+  <title>Contagem Regressiva para o novo PCCS</title>
   <style>
     body {
       background-color: #111;
@@ -24,9 +24,9 @@
     }
 
     .timer {
-      font-size: 3em;
-      letter-spacing: 2px;
+      font-size: 2em;
       font-weight: bold;
+      line-height: 1.4;
     }
 
     .expired {
@@ -37,7 +37,7 @@
   </style>
 </head>
 <body>
-  <h1>Faltam até 29 de maio de 2026:</h1>
+  <h1>Contagem Regressiva</h1>
   <div class="timer" id="countdown">Carregando...</div>
   <div class="expired" id="expiredMsg" style="display:none;">Já passou!</div>
 
@@ -63,7 +63,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      countdownElement.textContent = `Faltam ${days} dias ${hours} horas ${minutes} minutos e ${seconds} segundos para o novo PCCS.`;
     }
 
     updateCountdown();
