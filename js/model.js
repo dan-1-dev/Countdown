@@ -18,8 +18,8 @@ export const model = {
     const totalWidth = 365;
     const currentPosition = totalWidth - daysLeft;
     const walker = document.getElementById("walker");
-    walker.style.left = `${currentPosition}px`;
-    document.getElementById("daysLeftDisplay");
+    //walker.style.left = `${currentPosition}px`;
+    //document.getElementById("daysLeftDisplay");
 
     return { total, days, hours, minutes, seconds };
   }
