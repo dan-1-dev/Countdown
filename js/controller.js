@@ -1,17 +1,17 @@
 import { model } from "./model.js";
 import { view } from "./view.js";
 
-function updateCountdown1() {
-  const time1 = model.getTimeRemaining1();
+// function updateCountdown1() {
+//   const time1 = model.getTimeRemaining1();
 
-  if (time1.total <= 0) {
-    clearInterval(interval);
-    return;
-  }
+//   if (time1.total <= 0) {
+//     clearInterval(interval);
+//     return;
+//   }
 
-  view.update(time1);
+//   view.update(time1);
   
-}
+// }
 function updateCountdown() {
   const time = model.getTimeRemaining();
 
