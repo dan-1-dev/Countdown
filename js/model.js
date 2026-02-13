@@ -22,7 +22,7 @@ export const model = {
     //walker.style.left = `${currentPosition}px`;
     //document.getElementById("daysLeftDisplay");
 
-    return { total, days, hours, minutes, seconds };
+    return { total, days1, days, hours, minutes, seconds };
   }
     getTimeRemaining() {
     const now = new Date();
@@ -44,6 +44,6 @@ export const model = {
     //walker.style.left = `${currentPosition}px`;
     //document.getElementById("daysLeftDisplay");
 
-    return { total, days, hours, minutes, seconds };
+    return { total, days1, days, hours, minutes, seconds };
   }
 };
