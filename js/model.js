@@ -35,9 +35,11 @@ export const model = {
     const begin = Math.floor(inicio / (1000 * 60 * 60 * 24));
 
     let daysLeft = Math.ceil(total / days);
+    let daysBeginLeft = Math.ceil(inicio / days);
 
     // Limitar entre 0 e 365
     daysLeft = Math.max(0, Math.min(365, daysLeft));
+    daysBeginLeft = Math.max(0, Math.min(365, daysBeginLeft));
     // Cálculo de posição (trajeto de 365px, 1px por dia)
     const totalWidth = 365;
     const currentPosition = totalWidth - daysLeft;
