@@ -6,12 +6,10 @@ export const model = {
     const now = new Date();
     const total = this.targetDate1 - now;
 
-    const seconds = Math.floor((total / 1000) % 60);
-    const minutes = Math.floor((total / 1000 / 60) % 60);
-    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    const days1 = Math.floor(total / (1000 * 60 * 60 * 24));
+   
 
-    let daysLeft = Math.ceil(total / days);
+    let daysLeft = Math.ceil(total / days1);
 
     // Limitar entre 0 e 365
     daysLeft = Math.max(0, Math.min(365, daysLeft));
@@ -22,7 +20,7 @@ export const model = {
     //walker.style.left = `${currentPosition}px`;
     //document.getElementById("daysLeftDisplay");
 
-    return { total, days1, days, hours, minutes, seconds };
+    return { total, days1, };
   }
     getTimeRemaining() {
     const now = new Date();
@@ -44,6 +42,6 @@ export const model = {
     //walker.style.left = `${currentPosition}px`;
     //document.getElementById("daysLeftDisplay");
 
-    return { total, days1, days, hours, minutes, seconds };
+    return { total, days, hours, minutes, seconds };
   }
 };
