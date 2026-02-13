@@ -23,7 +23,7 @@ function updateCountdown() {
   view.update(time);
   
 }
-updateCountdown1();// Atualiza ao carregar
+// updateCountdown1();// Atualiza ao carregar
 updateCountdown(); // Atualiza ao carregar
-const interval1 = setInterval(updateCountdown1, 1000); // Atualiza a cada segundo
+// const interval1 = setInterval(updateCountdown1, 1000); // Atualiza a cada segundo
 const interval = setInterval(updateCountdown, 1000); // Atualiza a cada segundo
